@@ -6,12 +6,12 @@ import SignedOutLinks from './SignedOutLinks'
 
 const Navbar = () => {
     return (
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
             <div className="container">
                 <Link class="navbar-brand" to="/">
                     <img src={logo} width="30" height="30" class="d-inline-block align-bottom" alt="logo" />
-                    SocialNetworkSite.com
-            </Link>
+                    <span className="d-none d-md-inline">SocialNetworkSite.com</span>
+                </Link>
                 <SignedOutLinks />
             </div>
         </nav>
