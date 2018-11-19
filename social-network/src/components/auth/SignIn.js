@@ -17,11 +17,11 @@ class SignIn extends Component {
     render() {
         return (
             <div className="container">
-                <div class="card shadow-sm mb-3">
-                    <div class="card-header">
+                <div className="card shadow-sm mb-3">
+                    <div className="card-header">
                         Sign in:
                     </div>
-                    <div class="card-body">
+                    <div className="card-body">
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
                                 <label for="email">Email address</label>

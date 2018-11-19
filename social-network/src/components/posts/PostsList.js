@@ -1,14 +1,25 @@
 import React from 'react'
 import PostSummary from './PostSummary';
-import { Link } from 'react-router-dom'
 
-const PostList = () => {
+const PostList = ({posts}) => {
+    const postList = posts.length ? (
+        posts.map((i) => {
+            return (
+                <PostSummary key={i.id} post={i} />
+            )
+        })
+    ) : (
+        <div>
+            <div className="card shadow-sm">
+                <div className="card-body">
+                    No posts to show...
+                </div>
+            </div>
+        </div>
+    );
     return (
         <div className="posts-list">
-            <PostSummary />
-            <PostSummary />
-            <PostSummary />
-            <PostSummary />
+            {postList}
         </div>
     )
 }

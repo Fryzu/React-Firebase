@@ -19,20 +19,20 @@ class SignUp extends Component {
     render() {
         return (
             <div className="container">
-                <div class="card shadow-sm mb-3">
-                    <div class="card-header">
+                <div className="card shadow-sm mb-3">
+                    <div className="card-header">
                         Sign up:
                     </div>
-                    <div class="card-body">
+                    <div className="card-body">
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
                                 <label>Name</label>
-                                <div class="row">
-                                    <div class="col-12 col-md-6">
-                                        <input id="firstName" onChange={this.handleChange} type="text" class="form-control" placeholder="First name" />
+                                <div className="row">
+                                    <div className="col-12 col-md-6">
+                                        <input id="firstName" onChange={this.handleChange} type="text" className="form-control" placeholder="First name" />
                                     </div>
-                                    <div class="col-12 col-md-6">
-                                        <input id="lastName" onChange={this.handleChange} type="text" class="form-control" placeholder="Last name" />
+                                    <div className="col-12 col-md-6">
+                                        <input id="lastName" onChange={this.handleChange} type="text" className="form-control" placeholder="Last name" />
                                     </div>
                                 </div>
                             </div>

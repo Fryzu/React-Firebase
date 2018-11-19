@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createPost } from '../../store/actions/postActions';
 
 class CreatePost extends Component {
     state = {
@@ -12,7 +14,7 @@ class CreatePost extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state)
+        this.props.createPost(this.state);
     }
     render() {
         return (
@@ -20,11 +22,11 @@ class CreatePost extends Component {
                 <h4>Add new post:</h4><hr />
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label for="title">Title</label>
+                        <label htmlFor="title">Title</label>
                         <input onChange={this.handleChange} type="text" className="form-control" id="title" placeholder="Enter title" />
                     </div>
                     <div className="form-group">
-                        <label for="content">Content</label>
+                        <label htmlFor="content">Content</label>
                         <textarea onChange={this.handleChange} className="form-control" id="content" placeholder="Enter content" />
                     </div>
                     <button type="submit" className="btn btn-dark">Submit</button>
@@ -34,4 +36,12 @@ class CreatePost extends Component {
     }
 }
 
-export default CreatePost
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createPost: (post) => {
+            dispatch(createPost(post))
+        }
+    }
+}
+
+export default connect(null, mapDispatchToProps)(CreatePost)

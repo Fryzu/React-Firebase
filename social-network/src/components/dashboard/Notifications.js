@@ -3,8 +3,8 @@ import React from 'react'
 const Notifications = () => {
     return (
         <div>
-            <div class="card shadow-sm">
-                <div class="card-body">
+            <div className="card shadow-sm">
+                <div className="card-body">
                     Notifications:
                 </div>
             </div>
