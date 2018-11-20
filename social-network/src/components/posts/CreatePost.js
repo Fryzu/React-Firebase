@@ -15,10 +15,11 @@ class CreatePost extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.createPost(this.state);
+        this.props.history.push('/');
     }
     render() {
         return (
-            <div className="container">
+            <div className="container create-post">
                 <h4>Add new post:</h4><hr />
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">

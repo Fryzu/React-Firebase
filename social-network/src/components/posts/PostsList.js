@@ -1,9 +1,8 @@
 import React from 'react'
 import PostSummary from './PostSummary';
 
-const PostList = (posts) => {
-    console.log("In postlist", posts);
-    const postList = posts.length ? (
+const PostList = ({posts}) => {
+    const postList = (posts !== undefined) ? (
         posts.map((i) => {
             return (
                 <PostSummary key={i.id} post={i} />
