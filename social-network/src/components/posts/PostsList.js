@@ -1,7 +1,8 @@
 import React from 'react'
 import PostSummary from './PostSummary';
 
-const PostList = ({posts}) => {
+const PostList = (posts) => {
+    console.log("In postlist", posts);
     const postList = posts.length ? (
         posts.map((i) => {
             return (
