@@ -9,7 +9,6 @@ const initState = {
 const postsReducer = (state = initState, action) => {
   switch (action.type) {
     case "CREATE_POST":
-      console.log("CREATE_POST");
       break;
     case "CREATE_POST_ERROR":
       console.warn(action.error);

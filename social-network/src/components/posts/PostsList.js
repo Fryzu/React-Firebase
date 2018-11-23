@@ -1,11 +1,12 @@
 import React from 'react'
 import PostSummary from './PostSummary';
+import { Link } from 'react-router-dom';
 
 const PostList = ({posts}) => {
     const postList = (posts !== undefined) ? (
         posts.map((i) => {
             return (
-                <PostSummary key={i.id} post={i} />
+                <Link key={i.id} className="post-list-item" to={"/post/"+i.id+"/"}><PostSummary post={i} /></Link>
             )
         })
     ) : (

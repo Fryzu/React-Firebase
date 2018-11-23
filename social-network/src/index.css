@@ -17,3 +17,23 @@ body {
 .create-post textarea {
   min-height: 350px;
 }
+
+.notifications a {
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.post-list-item {
+  text-decoration: none;
+  color: black;
+}
+
+.post-list-item:hover {
+  text-decoration: none;
+  color: #505057;
+}
+
+.post-list-item:hover .card{
+  background-color: #F8F9FA;
+}

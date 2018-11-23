@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import React from 'react'
-import logo from './logo.png'
-//import SignedInLinks from './SignedInLinks'
-import SignedOutLinks from './SignedOutLinks'
+import React from 'react';
+import logo from './logo.png';
+//import SignedInLinks from './SignedInLinks';
+import SignedOutLinks from './SignedOutLinks';
+import { connect } from 'react-redux'; // for auth
 
 const Navbar = () => {
     return (
@@ -18,4 +19,10 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps)(Navbar);

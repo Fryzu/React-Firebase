@@ -3,8 +3,7 @@ import moment from 'moment';
 
 const PostSummary = (props) => {
     const authorName = props.post.authorFirstName+" "+props.post.authorLastName;
-    const date = moment(props.post.createdAt.nanoseconds).fromNow(); // 7 years ago
-    console.log(props.post.createdAt); //TODO: Date representation
+    const date = moment.unix(props.post.createdAt.seconds).fromNow(); // ex 7 years ago
 
     return (
         <div className="card shadow-sm mb-3">
