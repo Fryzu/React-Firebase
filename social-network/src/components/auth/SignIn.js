@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/authActions';
 
 class SignIn extends Component {
+
     state = {
         email: '',
         password: ''

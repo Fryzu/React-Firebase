@@ -15,13 +15,16 @@ const store = createStore(rootReducer,
     compose(
         applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
         reduxFirestore(fbConfig),
-        reactReduxFirebase(fbConfig)
+        reactReduxFirebase(fbConfig, {attachAuthIsReady: true}) //auth ready - doesnt render before auth is linked with server
     )
 ); // creating storage with additional thunk features to coop with database - extraargument allows additional arguments for actions functions
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+store.firebaseAuthIsReady.then(() => {
+    ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+    
+    // If you want your app to work offline and load faster, you can change
+    // unregister() to register() below. Note this comes with some pitfalls.
+    // Learn more about service workers: http://bit.ly/CRA-PWA
+    serviceWorker.unregister();
+})
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
