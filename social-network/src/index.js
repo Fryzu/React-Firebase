@@ -15,7 +15,7 @@ const store = createStore(rootReducer,
     compose(
         applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
         reduxFirestore(fbConfig),
-        reactReduxFirebase(fbConfig, {attachAuthIsReady: true}) //auth ready - doesnt render before auth is linked with server
+        reactReduxFirebase(fbConfig, {useFirestoreForProfile: true, userProfile: "users", attachAuthIsReady: true}) //auth ready - doesnt render before auth is linked with server, useFirestoreForProfile ads profile additional info looks for in userProfile collection
     )
 ); // creating storage with additional thunk features to coop with database - extraargument allows additional arguments for actions functions
 

@@ -22,6 +22,7 @@ const Notifications = () => {
                     </Link>
                 </div>
             </div>
+            <Link to="/createpost"><button type="button" className="btn btn-dark btn-block mt-2">Add new post</button></Link>
         </div>
     )
 }

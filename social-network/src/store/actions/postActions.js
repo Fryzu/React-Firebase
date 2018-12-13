@@ -7,11 +7,13 @@ export const createPost = (post) => {
 
     return (dispatch, getState, { getFirebase, getFirestore }) => {
         const firestore = getFirestore();
+        const profile = getState().firebase.profile;
+        const authorUid = getState().firebase.auth.uid;
         firestore.collection('posts').add({
             ...post, // post.title post.content from the post argument
-            authorFirstName: 'Jaxson',
-            authorLastName: 'Burns',
-            authorId: 12345,
+            authorFirstName: profile.firstName,
+            authorLastName: profile.lastName,
+            authorId: authorUid,
             createdAt: new Date()
         }).then(() => {
             dispatch({type: "CREATE_POST", post: post})
