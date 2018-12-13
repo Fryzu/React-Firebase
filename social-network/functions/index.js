@@ -17,7 +17,7 @@ exports.postCreated = functions.firestore.document('posts/{postId}').onCreate(do
     const post = doc.data();
     const notification = {
         user: `${post.authorFirstName} ${post.authorLastName}`,
-        content: "Added a new post",
+        content: post.title,
         time: admin.firestore.FieldValue.serverTimestamp()
     }
 
