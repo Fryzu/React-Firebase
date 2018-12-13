@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Notifications = () => {
+const Notifications = (props) => {
     return (
         <div className="notifications">
             <div className="card shadow-sm">
