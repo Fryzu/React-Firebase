@@ -37,3 +37,7 @@ body {
 .post-list-item:hover .card{
   background-color: #F8F9FA;
 }
+
+.app {
+  min-height: 100%;
+}

@@ -4,6 +4,7 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import moment from 'moment';
 import { Redirect } from 'react-router-dom';
+import CommentsList from '../comments/CommentsList';
 
 function PostDetails(props) {
     //const id = props.match.params.id;
@@ -37,6 +38,7 @@ function PostDetails(props) {
     return (
         <div>
             {post}
+            <CommentsList />
         </div>
     )
 }
